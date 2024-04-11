@@ -48,7 +48,7 @@
 
                     oThis.attr('disabled', false);
 
-                    let dataJson = JSON.decode(data);
+                    let dataJson = JSON.parse(data);
                     let response = dataJson['result'];
                     let error = dataJson['error'];
 
