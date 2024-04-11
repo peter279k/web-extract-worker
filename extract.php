@@ -49,4 +49,4 @@ if (!$err) {
     exit();
 }
 
-echo json_encode(['result' => base64_encode($response)])
+echo json_encode(['result' => base64_encode($response)]);
