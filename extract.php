@@ -43,3 +43,10 @@ $response = curl_exec($curl);
 $err = curl_error($curl);
 
 curl_close($curl);
+
+if (!$err) {
+    echo json_encode(['error' => $err]);
+    exit();
+}
+
+echo json_encode(['result' => base64_encode($response)])

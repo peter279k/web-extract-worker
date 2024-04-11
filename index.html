@@ -42,7 +42,7 @@
                 let oThis = $(this);
                 oThis.attr('disabled', true);
 
-                $.get('https://extract-worker-api.peterli.website/extract.php?prompt=' + prompt, function (data) {
+                $.get('https://web-extracter.peterli.website/extract.php?prompt=' + prompt, function (data) {
                     console.log(data);
                     $("#image_result").hide();
 
