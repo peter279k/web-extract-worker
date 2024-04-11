@@ -42,14 +42,15 @@
                 let oThis = $(this);
                 oThis.attr('disabled', true);
 
-                $.get('https://web-extracter.peterli.website/extract.php?prompt=' + prompt, function (data) {
+                $.get('https://web-extracter.peterli.website/extract.php?prompt=' + encodeURIComponent(prompt), function (data) {
                     console.log(data);
                     $("#image_result").hide();
 
                     oThis.attr('disabled', false);
 
-                    let response = data['result'];
-                    let error = data['error'];
+                    let dataJson = JSON.decode(data);
+                    let response = dataJson['result'];
+                    let error = dataJson['error'];
 
                     if (error) {
                         alert('Error message: ' + error);
