@@ -25,7 +25,7 @@ $token = $arrSetting[1];
 $curl = curl_init();
 
 curl_setopt_array($curl, [
-  CURLOPT_URL => "https://api.cloudflare.com/client/v4/accounts/$accountId/ai/run/@cf/runwayml/stable-diffusion-v1-5-inpainting",
+  CURLOPT_URL => "https://api.cloudflare.com/client/v4/accounts/$accountId/ai/run/@cf/runwayml/stable-diffusion-v1-5-img2img",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
