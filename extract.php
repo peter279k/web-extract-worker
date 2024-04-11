@@ -44,7 +44,7 @@ $err = curl_error($curl);
 
 curl_close($curl);
 
-if (!$err) {
+if ($err !== '') {
     echo json_encode(['error' => $err]);
     exit();
 }
