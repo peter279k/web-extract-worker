@@ -6,6 +6,7 @@ if ($prompt === '') {
     exit();
 }
 
+$prompt = rawurldecode($prompt);
 $settingPath = 'settings.txt';
 if (file_exists($settingPath) === false) {
     echo json_encode(['error' => "$settingPath file is not found!"]);
