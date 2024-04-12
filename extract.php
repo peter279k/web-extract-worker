@@ -8,7 +8,6 @@ if ($prompt === '') {
 
 $models = [
     '@cf/lykon/dreamshaper-8-lcm',
-    '@cf/runwayml/stable-diffusion-v1-5-img2img',
     '@cf/runwayml/stable-diffusion-v1-5-inpainting',
 ];
 $model = $models[random_int(0, count($models)-1)];
