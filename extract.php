@@ -10,7 +10,6 @@ $models = [
     '@cf/lykon/dreamshaper-8-lcm',
     '@cf/runwayml/stable-diffusion-v1-5-img2img',
     '@cf/runwayml/stable-diffusion-v1-5-inpainting',
-    '@cf/stabilityai/stable-diffusion-xl-base-1.0',
 ];
 $model = $models[random_int(0, count($models)-1)];
 
