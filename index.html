@@ -36,7 +36,10 @@
     <script>
         $(function () {
             $("#image_result").hide();
+            $("#btn_generating").hide();
             $("#btn_fetch").click(function (e) {
+                $("#btn_generating").show();
+                $("#btn_fetch").hide();
                 e.preventDefault = false;
                 let prompt = $("#txt_prompt").val();
                 let oThis = $(this);
@@ -44,8 +47,6 @@
 
                 $.get('https://web-extracter.peterli.website/extract.php?prompt=' + encodeURIComponent(prompt), function (data) {
                     console.log(data);
-                    $("#image_result").hide();
-
                     oThis.attr('disabled', false);
 
                     let dataJson = JSON.parse(data);
@@ -59,6 +60,8 @@
 
                     $('#image_result').attr('src', `data:image/png;base64,${response}`);
                     $("#image_result").show();
+                    $("#btn_generating").hide();
+                    $("#btn_fetch").show();
                 });
             });
 
@@ -83,6 +86,10 @@
                         <!--end of col-->
                         <div class="col-auto">
                             <button id="btn_fetch" class="btn btn-lg btn-success" type="button">Generate</button>
+                            <button id="btn_generating" class="btn btn-lg btn-success" disabled>
+                                <span class="spinner-border spinner-border-sm"></span>
+                                Generating..
+                            </button>
                         </div>
                         <!--end of col-->
                     </div>
