@@ -1,5 +1,7 @@
 <?php
 
+header("Access-Control-Allow-Origin: *");
+
 $prompt = $_GET['prompt'] ?? '';
 if ($prompt === '') {
     echo json_encode(['error' => 'Empty prompt!']);
