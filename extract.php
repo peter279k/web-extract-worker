@@ -40,7 +40,7 @@ curl_setopt_array($curl, [
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => json_encode(['prompt' => 'string']),
+  CURLOPT_POSTFIELDS => json_encode(['prompt' => $prompt]),
   CURLOPT_HTTPHEADER => [
     "Authorization: Bearer $token",
     "Content-Type: application/json",
