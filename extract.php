@@ -6,6 +6,14 @@ if ($prompt === '') {
     exit();
 }
 
+$models = [
+    '@cf/lykon/dreamshaper-8-lcm',
+    '@cf/runwayml/stable-diffusion-v1-5-img2img',
+    '@cf/runwayml/stable-diffusion-v1-5-inpainting',
+    '@cf/stabilityai/stable-diffusion-xl-base-1.0',
+];
+$model = $models[random_int(0, count($models)-1)];
+
 $prompt = rawurldecode($prompt);
 $settingPath = 'settings.txt';
 if (file_exists($settingPath) === false) {
@@ -26,7 +34,7 @@ $token = $arrSetting[1];
 $curl = curl_init();
 
 curl_setopt_array($curl, [
-  CURLOPT_URL => "https://api.cloudflare.com/client/v4/accounts/$accountId/ai/run/@cf/lykon/dreamshaper-8-lcm",
+  CURLOPT_URL => "https://api.cloudflare.com/client/v4/accounts/$accountId/ai/run/@cf/$model",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
